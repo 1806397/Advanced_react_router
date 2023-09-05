@@ -6,7 +6,7 @@ function Header() {
     <header>
       <Link to="/">Fast React Pizza Co.</Link>
       <SearchOrder />
-      <p>Piyush</p>
+      {/* <p>Piyush</p> */}
     </header>
   );
 }
