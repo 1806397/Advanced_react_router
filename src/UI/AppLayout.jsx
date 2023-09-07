@@ -13,8 +13,8 @@ function AppLayout() {
         <main className="mx-auto max-w-3xl">
           <Outlet />
         </main>
-        <CartOverview />
       </div>
+      <CartOverview />
     </div>
   );
 }
