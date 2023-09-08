@@ -1,9 +1,21 @@
+import { useDispatch } from 'react-redux';
 import Button from '../../UI/Button';
 import { formatCurrency } from '../../utils/helpers';
+import { addItem } from '../cart/cartSlice';
 
 function MenuItem({ pizza }) {
+  const dispatch = useDispatch();
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
-
+  function handleAddToCart() {
+    const newItem = {
+      pizzaId: id,
+      name,
+      quantity: 1,
+      unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+    dispatch(addItem(newItem));
+  }
   return (
     <li>
       <img
@@ -14,7 +26,13 @@ function MenuItem({ pizza }) {
       <div className="flex flex-col pt-2">
         <div className="flex justify-between sm:px-0">
           <p className="font-medium">{name}</p>
-          {soldOut ? '' : <Button type="small">+</Button>}
+          {soldOut ? (
+            ''
+          ) : (
+            <Button type="small" onClick={handleAddToCart}>
+              +
+            </Button>
+          )}
         </div>
         <div className="pt-4">
           <p className="text-sm italic text-stone-500">
