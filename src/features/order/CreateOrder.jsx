@@ -53,12 +53,11 @@ function CreateOrder() {
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Phone number</label>
-          <div className="flex flex-col">
-            <div className="grow">
-              <input className="input" type="tel" name="phone" required />
-            </div>
+
+          <div className="grow">
+            <input className="input" type="tel" name="phone" required />
             {formErrors?.phone && (
-              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-500">
+              <p className="mt-4 rounded-md bg-red-100 p-2 text-xs text-red-500">
                 {formErrors.phone}
               </p>
             )}
