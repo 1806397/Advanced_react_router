@@ -7,7 +7,7 @@ function CartOverview() {
   const totalPrice = useSelector(getTotalCartPrice);
   if (!totalCartQuantity) return null;
   return (
-    <div className="safelist flex translate-y-0 items-center justify-between bg-stone-800 px-4 py-4 text-sm uppercase text-stone-200 ease-in sm:px-6 md:text-base">
+    <div className="animate-slow-rise flex translate-y-0 transform items-center justify-between bg-stone-800 px-4 py-4 text-sm uppercase text-stone-200 transition-transform ease-linear sm:px-6 md:text-base">
       <p className=" space-x-4 font-semibold text-stone-300 sm:space-x-2">
         <span>{totalCartQuantity} pizzas</span>
         <span>${totalPrice}</span>

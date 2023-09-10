@@ -10,6 +10,12 @@ export default {
       'animate-[fade-in-down_1s_ease-in-out]',
     ],
     extend: {
+      keyframes: {
+        rise: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
       colors: {
         pizza: '#123456',
       },
@@ -17,7 +23,7 @@ export default {
         screen: '100dvh',
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
+        'slow-rise': 'rise 1s ease',
       },
     },
   },
