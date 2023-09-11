@@ -6,6 +6,7 @@ import {
   getCurrentQuantityById,
   reduceByOne,
 } from '../cart/cartSlice';
+import UpdateItemQuantity from '../cart/UpdateItemQuantity';
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -35,9 +36,15 @@ function MenuItem({ pizza }) {
           ) : (
             <div className="flex gap-2">
               {cart ? (
-                <Button type="small" onClick={() => dispatch(reduceByOne(id))}>
-                  -
-                </Button>
+                <>
+                  <Button
+                    type="small"
+                    onClick={() => dispatch(reduceByOne(id))}
+                  >
+                    -
+                  </Button>
+                  <UpdateItemQuantity pizzaId={id} />
+                </>
               ) : (
                 ''
               )}
