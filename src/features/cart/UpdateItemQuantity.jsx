@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 
 function UpdateItemQuantity({ pizzaId }) {
   const cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
   const item = cart.find((item) => item.pizzaId === pizzaId);
   console.log(item);
   if (!item) return null;
