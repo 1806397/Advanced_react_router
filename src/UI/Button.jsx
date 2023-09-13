@@ -5,12 +5,12 @@ function Button({ children, disabled = false, to, type, onClick }) {
   bg-yellow-400  font-semibold uppercase 
   tracking-wide text-stone-800 transition-colors 
   duration-300 hover:bg-yellow-300 focus:outline-none 
-  focus:ring focus:ring-yellow-300 focus:ring-offset-2 
-  disabled:cursor-not-allowed disabled:bg-slate-600`;
+  focus:ring focus:bg-yellow-300 focus:ring-yellow-300 focus:ring-offset-2 
+  disabled:cursor-not-allowed disabled:bg-slate-600 text-sm`;
   const styles = {
     primary: base + ` md:px-6 md:py-4 px-4 py-3`,
-    small:
-      base + ` py-1 md:px-2.5 px-4 md:py-2.5 text-xs rounded-[50%] h-8 w-8`,
+    small: base + ` px-4 py-2 md:py-2.5 md:px-5 text-xs`,
+    round: base + ` px-2.5 py-1 md:px-3.5 md:py-2 text-sm`,
     secondary: `focus:ring-yellow mt-2 inline-block rounded-full 
       border-2 border-stone-300 font-semibold uppercase 
       tracking-wide text-stone-800 transition-colors 
